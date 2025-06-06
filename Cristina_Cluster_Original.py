@@ -16,7 +16,7 @@ import google.auth
 
 from google.oauth2 import service_account  
 # Create API client. 
-credentials_dict = st.secrets["gcp"]
+credentials_dict = st.secrets["gcp_service_account"]
 credentials_1 = service_account.Credentials.from_service_account_info(credentials_dict)
 
 from streamlit_extras.app_logo import add_logo
