@@ -41,11 +41,11 @@ with st.sidebar:
     st.subheader(":gray[Chatea con tu Buyer Persona]")
     st.markdown(":gray[Se ha generado con IA un Buyer Persona Sintético de ECI (Cristina, clúster3).]")
     st.title(
-        ":gray[Chatea con un cliente :face_with_monocle:]"
+        ":gray[Chatea con Crisitina :face_with_monocle:]"
     )
     
     
-cliente_sidebar = st.sidebar.radio(':gray[Escoge al cliente:]', [':gray[Cristina]'])
+cliente_sidebar = st.sidebar.radio(':gray[Escoge al buyer persona:]', [':gray[Cristina]'])
 
 cliente = cliente_sidebar.split("[")[1].split("]")[0]
 
