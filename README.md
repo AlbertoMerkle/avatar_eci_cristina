@@ -1,0 +1,1 @@
+Repositorio para un chat conversacional de un buyer persona de ECI con Gemini. Aplicación streamlit con Python.
