@@ -16,7 +16,8 @@ import google.auth
 
 from google.oauth2 import service_account  
 # Create API client. 
-credentials_1 = service_account.Credentials.from_service_account_info(     st.secrets["gcp_service_account"] )
+credentials_dict = st.secrets["gcp"]
+credentials_1 = service_account.Credentials.from_service_account_info(credentials_dict)
 
 from streamlit_extras.app_logo import add_logo
 add_logo("logos/2022-05_Merkle-logo-color.png", height = 25)
