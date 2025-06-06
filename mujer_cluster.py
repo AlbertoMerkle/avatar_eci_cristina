@@ -15,15 +15,12 @@ st.set_page_config(
 
 show_pages([
     Page("mujer_cluster.py","Powered by Vertex AI, Google."),
-    Page("Cristina_Cluster_Original.py","Cristina"),
-    Page("Pepe_Cluster_Original.py","Pepe"),
-    Page("Lara_Cluster_Original.py","Lara")
+    Page("Cristina_Cluster_Original.py","Cristina")
 ])
 
 
 hide_pages(['Cristina'])
-hide_pages(['Pepe'])
-hide_pages(['Lara'])
+
 
 ##################################################################################
 
@@ -33,8 +30,7 @@ add_logo("logos/2022-05_Merkle-logo-color.png", height = 25)
 html = """
 <div style="color:gray; font-size:10px;">
 <i>
-Texto e imagenes generadas por GenAI para fines no lucrativos de divulgación científica. Durante el uso de esta herramienta, se solicita respeto hacia la dignidad y reputación de las personas representadas y a sus familias.
-</i>
+Texto e imagenes generadas por GenAI
 </div>
 """
 
@@ -42,14 +38,14 @@ Texto e imagenes generadas por GenAI para fines no lucrativos de divulgación ci
 #add_logo("logos/2022-05_Merkle-logo-white_1000.png", height = 5)
 with st.sidebar:
     st.markdown(html, unsafe_allow_html=True)
-    st.subheader(":gray[Chatea con un cliente]")
-    st.markdown(":gray[Se ha generado con IA un cliente con los gustos del cluster al que pertenece. Puede preguntarle cualquier duda que tenga acerca de sus interacciones con el servicio o más generales.]")
+    st.subheader(":gray[Chatea con tu Buyer Persona]")
+    st.markdown(":gray[Se ha generado con IA un Buyer Persona Sintético de ECI (Cristina, clúster3).]")
     st.title(
         ":gray[Chatea con un cliente :face_with_monocle:]"
     )
     
     
-cliente_sidebar = st.sidebar.radio(':gray[Escoge al cliente:]', [':gray[Cristina]', ':gray[Pepe]',':gray[Lara]'])
+cliente_sidebar = st.sidebar.radio(':gray[Escoge al cliente:]', [':gray[Cristina]'])
 
 cliente = cliente_sidebar.split("[")[1].split("]")[0]
 
@@ -57,18 +53,12 @@ cliente = cliente_sidebar.split("[")[1].split("]")[0]
 st.write("# "+cliente_sidebar+"")
 
 image_dict = {
-  "Cristina": "./imagenes/cristina_cluster.png",
-  "Pepe": "./imagenes/cristina_supermercado.png",
-  "Lara": "./imagenes/cristina_supermercado.png"
+  "Cristina": "./imagenes/cristina_cluster.png"
   }
 
 text_dict = {
   "Cristina": '''Cristina es una mujer que, como Lucía, compra tanto online como en tienda, pero podríamos decir que no siempre combina estos canales. Para ECI presenta un valor Medio. Además de la moda, categoría de compra que comparten todos los perfiles, Cristina también compra productos de moda infantil y juguetes. También realiza compras relacionadas con el deporte. Tiene el perfil principalmente de cesta media, pero está pensando en vincularse.
-''',
-  "Pepe": ''' Es Pepe
-''',
-  "Lara": ''' Es Lara
-''',
+'''
  }
 
 direccion = image_dict[cliente]
