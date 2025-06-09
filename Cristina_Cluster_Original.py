@@ -136,25 +136,19 @@ def display_message_on_the_screen_4():
 
         message(user_prompt_4, is_user=True)
 
+
         contents = []
 
-        # ultimos_mensajes = st.session_state.messages[-10:]
+        
 
-        # for m in st.session_state["messages"]:
-        #     contents.append(
-        #         types.Content(
-        #             role=m["role"],
-        #             parts=[types.Part.from_text(m["content"])]
-        #         )
-        #     )
-        contents = [
-            types.Content(
-            role="user",
-            parts=[
-                types.Part.from_text(text=user_prompt_4)
-            ]
-            ),
-        ]
+        for m in st.session_state["messages"]:
+            mensaje = m["content"]
+            contents.append(
+                types.Content(
+                    role=m["role"],
+                    parts=[types.Part.from_text(text=mensaje)]
+                )
+            )
 
 
         response_4 = client.models.generate_content(
