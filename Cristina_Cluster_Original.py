@@ -111,24 +111,11 @@ response = client.models.generate_content(
 
 response_4_inicial = response.text
 
-if "messages" in st.session_state:
-    del st.session_state.messages # Borramos session state messages
 
 if "messages" not in st.session_state:
   st.session_state["messages"] = [{"role": "assistant", "content": response_4_inicial}]
 
-
-with st.form("chat_input", clear_on_submit=True):
-    a, b = st.columns([4, 1])
-
-    user_prompt_4 = a.text_input(
-        label="Tu mensaje:",
-        placeholder="Escribe algo...",
-        label_visibility="collapsed",
-    )
-
-    b.form_submit_button("Enviar", use_container_width=True)
-
+user_prompt_4 = st.chat_input("Escribe algo...") 
 
 #  icon
 icon_4 = Image.open('imagenes/cristina_movil_2.png')
@@ -143,7 +130,7 @@ def display_message_on_the_screen_4():
             else:
                 message(msg_4["content"], is_user=msg_4["role"] == "user")  # display message on the screen
 
-    if user_prompt_4:
+    if user_prompt_4 is not None and user_prompt_4.strip() != "":
 
         st.session_state.messages.append({"role": "user", "content": user_prompt_4})
 
