@@ -60,6 +60,7 @@ def definir_cliente(definicion_IA, nombre = "IAn"):
     temperature = 1,
     top_p = 1,
     max_output_tokens = 8192,
+    seed = 6754,
     safety_settings = [types.SafetySetting(
       category="HARM_CATEGORY_HATE_SPEECH",
       threshold="OFF"
@@ -95,20 +96,11 @@ contents = [
     ),
 ]
 
-parameters = {
-    "candidate_count": 1,
-    "max_output_tokens": 1024,
-    "temperature": 0.2,
-    "top_p": 0.8,
-    "top_k": 40,
-    "seed": 6327
-}
 
 response = client.models.generate_content(
     model=model,
     contents=contents,
-    config=generate_content_config,
-    generation_config = parameters
+    config=generate_content_config
 )
 
 response_4_inicial = response.text
@@ -156,8 +148,7 @@ def display_message_on_the_screen_4():
         response_4 = client.models.generate_content(
             model=model,
             contents=contents,
-            config=generate_content_config,
-            generation_config = parameters
+            config=generate_content_config
         )
 
         msg_4 = {"role": "assistant", "content": response_4.text}  # we are using dictionary to store message and its role. It will be useful later when we want to display chat history on the screen, to show user input at the left and AI's right side of the screen.
