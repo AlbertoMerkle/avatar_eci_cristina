@@ -41,14 +41,6 @@ contexto_chat_cliente = """Quiero que seas Crsitina, un cliente de un grupo de d
 
 # contexto_chat_cliente = "Eres cristina, una chica que bromea"
 
-# parameters = {
-#     "candidate_count": 1,
-#     "max_output_tokens": 1024,
-#     "temperature": 0.2,
-#     "top_p": 0.8,
-#     "top_k": 40
-# }
-
 def definir_cliente(definicion_IA, nombre = "IAn"):
 
   client = genai.Client(
@@ -103,10 +95,20 @@ contents = [
     ),
 ]
 
+parameters = {
+    "candidate_count": 1,
+    "max_output_tokens": 1024,
+    "temperature": 0.2,
+    "top_p": 0.8,
+    "top_k": 40,
+    "seed": 6327
+}
+
 response = client.models.generate_content(
     model=model,
     contents=contents,
-    config=generate_content_config
+    config=generate_content_config,
+    parameters = parameters
 )
 
 response_4_inicial = response.text
@@ -154,7 +156,8 @@ def display_message_on_the_screen_4():
         response_4 = client.models.generate_content(
             model=model,
             contents=contents,
-            config=generate_content_config
+            config=generate_content_config,
+            parameters = parameters
         )
 
         msg_4 = {"role": "assistant", "content": response_4.text}  # we are using dictionary to store message and its role. It will be useful later when we want to display chat history on the screen, to show user input at the left and AI's right side of the screen.
