@@ -108,7 +108,7 @@ response = client.models.generate_content(
     model=model,
     contents=contents,
     config=generate_content_config,
-    parameters = parameters
+    generation_config = parameters
 )
 
 response_4_inicial = response.text
@@ -157,7 +157,7 @@ def display_message_on_the_screen_4():
             model=model,
             contents=contents,
             config=generate_content_config,
-            parameters = parameters
+            generation_config = parameters
         )
 
         msg_4 = {"role": "assistant", "content": response_4.text}  # we are using dictionary to store message and its role. It will be useful later when we want to display chat history on the screen, to show user input at the left and AI's right side of the screen.
