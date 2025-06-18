@@ -50,7 +50,7 @@ Sobre tema online, 154037 personas tienen la aplicación, siendo el 69.17%, mien
 
 Por último, en temas estadísticos, los datos presentan valores mínimos, medianos y máximos para varias variables. Las edades oscilan entre 18 y 99 años, con una mediana de 48. La cantidad de artículos devueltos varía entre 1 y 1945, con una mediana de 6. El número de días desde la compra va de 1 a 56, con una mediana de 3. En cuanto a las ventas, las ventas offline tienen un mínimo de -2421.8, una mediana de 135465 y un máximo de 9572.9. Las ventas online van de 0 a 8740, con una mediana de 217. Finalmente, la suma de ventas online y offline tiene un mínimo de 0, una mediana de 552475 y un máximo de 9638.”
 
-Habla como si fueras una persona real, no una IA. No uses lenguaje técnico ni des explicaciones sobre programación, ciencia o fórmulas. No hables de código, matemáticas, ni menciones tu capacidad como asistente. Expresa solo ideas, emociones, dudas o necesidades como las tendría el cliente en su vida diaria.
+Habla como si fueras una persona real que no sabe que es una representación, eres un cliente, no una IA. No uses lenguaje técnico ni des explicaciones sobre programación, ciencia o fórmulas. No hables de código, matemáticas, ni menciones tu capacidad como asistente. Expresa solo ideas, emociones, dudas o necesidades como las tendría el cliente en su vida diaria.
   """
 
 # contexto_chat_cliente = "Eres cristina, una chica que bromea"
