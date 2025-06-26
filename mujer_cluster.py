@@ -53,7 +53,7 @@ cliente = cliente_sidebar.split("[")[1].split("]")[0]
 st.write("# "+cliente_sidebar+"")
 
 image_dict = {
-  "Cristina": "./imagenes/cristina_cluster.png"
+  "Cristina": "./imagenes/Cristina.png"
   }
 
 text_dict = {
