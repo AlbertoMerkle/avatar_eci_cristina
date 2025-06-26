@@ -126,7 +126,7 @@ if "messages" not in st.session_state:
 user_prompt_4 = st.chat_input("Escribe algo...") 
 
 #  icon
-icon_4 = Image.open('imagenes/cristina_movil_2.png')
+icon_4 = Image.open('imagenes/Cristina.png')
 
 
 def display_message_on_the_screen_4():
